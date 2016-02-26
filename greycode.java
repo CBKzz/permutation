@@ -1,3 +1,5 @@
+//I was still wondering why can't I just add every element from 0~2^n to the list
+
 public class Solution {
     public List<Integer> grayCode(int n) {
         List<Integer> ans = new ArrayList<>();
