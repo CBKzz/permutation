@@ -1,4 +1,30 @@
 /*
+Given a set of distinct integers, nums, return all possible subsets.
+
+Note:
+Elements in a subset must be in non-descending order.
+The solution set must not contain duplicate subsets.
+*/
+
+public class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result=new ArrayList<>();
+        result.add(new ArrayList<>());
+        for(int i:nums){
+            List<List<Integer>> res=new ArrayList<>();
+            for(List<Integer> list: result){
+                List<Integer> temp=new ArrayList<>(list);
+                temp.add(i);
+                res.add(temp);
+            }
+            result.addAll(res);
+        }
+        return result;
+    }
+}
+
+/*
 Given a collection of integers that might contain duplicates, nums, return all possible subsets.
 
 Note:
@@ -50,3 +76,5 @@ public class Solution {
     }
     
 }
+
+
